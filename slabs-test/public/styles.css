@@ -1,0 +1,152 @@
+
+@font-face {
+    font-family: 'sLABS';
+    src: url('Acumin-RPro.otf') format('woff');
+}
+
+
+:root {
+    --font-size-small: 1.8rem;
+    --font-size-normal: 2.2rem;
+    --font-size-medium: 2.8rem;
+    --font-size-medium-1: 3.6rem;
+    --font-size-large: 5.5rem;
+    --font-size-huge: 7.5rem;
+    --font-stack: 'sLABS', sans-serif;
+
+    --line-height-normal: 1.7;
+    --line-height-small: 1.2;
+
+    --black:  rgb(24, 24, 24);
+    --slabs-blue: #0e358e;
+    --white: #fff;
+
+
+    --container-max-width: 1180px;
+    --container-normal-width: 800px;
+    --container-medium-width: 700px; 
+    --container-small-width: 500px;
+
+    --gutter-huge: 11rem;
+    --gutter-medium: 6rem;
+    --gutter-normal: 3rem;
+    --gutter-small-1: 2.5rem;
+    --gutter-small: 2rem;
+
+}
+
+h1{
+    font-family: 'sLABS';
+    color: var(--white);
+}
+p, a{
+    font-family: 'sLABS';
+    color: var(--white);
+    font-size: var(--font-size-normal);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: var(--black);
+  font-family: var(--font-stack);
+  overflow: hidden;
+}
+
+.App{
+    position: relative;
+    height: 100vh;
+    width: 100vh;
+}
+
+nav{
+    position: absolute;
+    margin:30px;
+    top: 0;
+    left: 0;
+}
+
+.row {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+@media(max-width: 1340px) {
+    .row {
+        max-width: 1100px;
+    }
+}
+
+@media(max-width: 1240px) {
+    .row {
+        padding: 0 var(--gutter-medium);
+    }
+}
+
+@media(max-width: 600px) {
+    .row {
+        padding: 0 var(--gutter-normal);
+    }
+}
+
+@media(max-width: 600px) {
+    .row {
+        padding: 0 var(--gutter-small);
+    }
+}
+
+/* welcome page styles */
+.welcome{
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    /* z-index of comet chat is higher */
+    z-index: 2147483001;
+    background: var(--black);
+}
+
+#welcome-wrapper{
+    position: relative;
+    top: 30%;
+    animation: showup 4s forwards;
+}
+
+.welcome div{
+    display: inline-block;
+    font-size: var(--font-size-large);
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--white);
+}
+
+.welcome #labs:first-letter{
+    margin-left: -8px;
+}
+
+.welcome #s{
+    width: 280px;
+    animation: shorten 1s forwards 1.5s;
+}
+
+.welcome p:hover img{
+    transform: translateX(10px);
+    transition-duration: .3s;
+}
+.welcome img{
+    width:20px;
+    transition: transform 1s ease-in-out;
+}
+
+
+@keyframes showup{
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+@keyframes shorten {
+    0% {width:280px;}
+    100% {width:var(--font-size-medium);}
+}
