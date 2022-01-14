@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Client from "./components/Client";
 import Agent from "./components/Agent";
-import Lnq from "./pages/Lnq";
+import Project from "./pages/Project";
 
 const App = () => {
   const [clicked, setClicked] = useState(false);
@@ -39,19 +39,15 @@ const App = () => {
             <Projects />
             <Client/>
           </>)}></Route>
-          <Route path="/projects/lnq" element={(<>
-            <Lnq />
+          <Route path="/projects/:projectId" element={(<>
+            <Project />
             <Client/>
           </>)}></Route>
-          {/* <Route path='/projects/:projectName'>
-          </Route> */}
           <Route path="/agent" element={<Agent/>} />
         </Routes>
       </BrowserRouter>
       <Footer/>
       {/* Email Modal */}
-      {/* {Beautiful 3D HOME} */}
-      {/* Footer */}
     </div>
   );
 }
