@@ -3,7 +3,10 @@
     font-family: 'sLABS';
     src: url('Acumin-RPro.otf') format('woff');
 }
-
+@font-face {
+    font-family: 'sLABS-bold';
+    src: url('Acumin-BdPro.otf') format('woff');
+}
 
 :root {
     --font-size-small: 1.8rem;
@@ -36,12 +39,12 @@
 }
 
 h1{
-    font-family: 'sLABS';
-    color: var(--white);
+    font-family: 'sLABS-bold';
+    color: var(--black);
 }
 p, a{
     font-family: 'sLABS';
-    color: var(--white);
+    color: var(--black);
     font-size: var(--font-size-normal);
 }
 
@@ -50,23 +53,71 @@ body,
 #root {
   height: 100%;
   width: 100%;
-  background-color: var(--black);
   font-family: var(--font-stack);
   overflow: hidden;
+  background: linear-gradient(125deg, #fff, #e2e2e2);
+  background-size: 400% 400%;
+  -webkit-animation: gradientBackground 15s ease infinite;
+  -moz-animation: gradientBackground 15s ease infinite;
+  animation: gradientBackground 15s ease infinite;
+}
+
+body{
+    margin: 0;
 }
 
 .App{
-    position: relative;
-    height: 100vh;
-    width: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
-nav{
-    position: absolute;
-    margin:30px;
-    top: 0;
-    left: 0;
+@-webkit-keyframes gradientBackground {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
+@-moz-keyframes gradientBackground {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradientBackground {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* nav styles*/
+nav{
+    position: fixed;
+    display: flex;
+    top: 0;
+    width:100%;
+    left: 0;
+    overflow: auto;
+    /* /* box-shadow: 0px 10px 20px #ccc; */
+    background: var(--white);
+}
+
+.left-links{
+    flex:1 1 200px;
+ }
+
+ .links {
+   display: inline-block;
+   text-align: center;
+   padding: 1vw 2vw;
+   color: rgb(0, 0, 0);
+   text-decoration: none;
+   font-size: 17px;
+   font-weight: bolder;
+}
+
+.links:hover{
+    color: var(--slabs-blue);
+    transition: all 0.2s ease-in;
+}
+
 
 .row {
     max-width: var(--container-max-width);
@@ -112,6 +163,8 @@ nav{
     position: relative;
     top: 30%;
     animation: showup 4s forwards;
+    -webkit-animation: showup 4s forwards;
+    -moz-animation: showup 4s forwards;
 }
 
 .welcome div{
@@ -129,6 +182,13 @@ nav{
 .welcome #s{
     width: 280px;
     animation: shorten 1s forwards 1.5s;
+    -webkit-animation: shorten 1s forwards 1.5s;
+    -moz-animation: shorten 1s forwards 1.5s;
+    
+}
+.welcome p{
+    color: var(--white);
+    font-size: var(--font-size-normal)
 }
 
 .welcome p:hover img{
@@ -146,7 +206,27 @@ nav{
     100% {opacity:1;}
 }
 
+@-webkit-keyframes showup{
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes showup{
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+
 @keyframes shorten {
+    0% {width:280px;}
+    100% {width:var(--font-size-medium);}
+}
+
+@-webkit-keyframes shorten {
+    0% {width:280px;}
+    100% {width:var(--font-size-medium);}
+}
+
+@-moz-keyframes shorten {
     0% {width:280px;}
     100% {width:var(--font-size-medium);}
 }

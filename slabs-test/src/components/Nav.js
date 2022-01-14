@@ -4,10 +4,12 @@ const Nav = () => {
     return (
         <>
         <nav>
-            <ul>
-                <li><a href="/" id='home-link'>Home</a></li>
-                <li><a href="/projects" id='lnq'>Projects</a></li>
-            </ul>
+            <div className='left-links'>
+                <a href='/' id='logo-link' className='links'>sLABS</a>
+            </div>
+            <div className='right-links'>
+                <a href='/projects' className='links'>PROJECTS</a>
+            </div>
         </nav>
         </>
     )

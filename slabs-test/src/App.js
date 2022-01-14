@@ -22,17 +22,24 @@ const App = () => {
         <Routes>
           <Route path="/" element={(
             <>
-            {clicked ? <Home/> :
+            {clicked ? (
+              <>
+                <Home/>
+                <Client/>
+              </>
+            ) :
               <Welcome enterClick={enterClick}/>
             }
             </>
           )}>
           </Route>
-          <Route path="/projects" element={<Projects />}></Route>
-        <Route path="/agent" element={<Agent/>} />
+          <Route path="/projects" element={(<>
+            <Projects />
+            <Client/>
+          </>)}></Route>
+          <Route path="/agent" element={<Agent/>} />
         </Routes>
       </BrowserRouter>
-      <Client />
       {/* Email Modal */}
       {/* {Beautiful 3D HOME} */}
       {/* Footer */}

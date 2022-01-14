@@ -1,0 +1,21 @@
+.home-wrapper{
+    position: relative;
+    top: 13vh;
+    height: var(--container-medium-width);
+}
+
+
+.home-info{
+    padding: 4rem 1rem ;
+
+    animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.home-info h1{
+    font-family: 'sLABS-bold';
+}
+
+@keyframes slide-up{
+  0%   {opacity: 0;transform: translateY(100px)}
+  100% {opacity: 1;transform: translateY(0)}
+}
