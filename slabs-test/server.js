@@ -13,12 +13,6 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('slabs-test/build'));
 }
 
-// Security Middleware
-if (!isProduction) {
-  // enable cors only in development
-  app.use(cors());
-}
-
 app.use(routes);
 
 // 404 handler
