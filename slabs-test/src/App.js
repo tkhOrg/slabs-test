@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Welcome from './components/Welcome';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Client from "./components/Client";
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/agent" element={<Agent/>} />
         </Routes>
       </BrowserRouter>
+      <Footer/>
       {/* Email Modal */}
       {/* {Beautiful 3D HOME} */}
       {/* Footer */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Grid, Cell } from 'react-foundation';
 
 import './Projects.css'
 
