@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 const { ValidationError } = require('sequelize');
 require('dotenv').config();
-const mailchimp = require("@mailchimp/mailchimp_marketing");
+// const mailchimp = require("@mailchimp/mailchimp_marketing");
 const routes = require('../backend/routes');
 
 //serve static files
