@@ -117,8 +117,7 @@ const Project = () => {
                       <img src={lightfieldImage}></img>
                     </Cell>
                   )
-                }
-      
+                }      
                 <Cell small={12} large={6} className='project-info'>
                     <h1>{myProject.name}</h1>
                     <h3>THE WEARABLE INTERNET.</h3>

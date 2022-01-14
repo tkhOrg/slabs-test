@@ -36,16 +36,6 @@ app.use('/', (req, res) => {
   res.status(404).send('404 Not Found');
 });
 
-// global error handler
-// app.use('/',(err, req, res, next) => {
-//   const defaultErr =  {
-//     log: 'Express error handler caught unknown middleware error',
-//     status: 400,
-//     message: { err: 'An error occurred' },
-//   };
-//   const errorObj = Object.assign(defaultErr, err);
-//   res.status(errorObj.status).send(errorObj.message);
-// });
 
 app.use((err, _req, _res, next) => {
   // check if error is a Sequelize error:
