@@ -1,8 +1,8 @@
-import React, { Suspense, useRef, useState, useEffect } from 'react';
+import React, { Suspense, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Grid, Cell } from 'react-foundation';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, ContactShadows, useGLTF } from "@react-three/drei";
+import { OrbitControls,  useGLTF } from "@react-three/drei";
 import iddrisAura from '../models/iddrisaura.glb';
 import lightfieldImage from '../images/lightfield.jpeg';
 
@@ -83,23 +83,12 @@ useGLTF.preload(iddrisAura);
 
 const Project = () => {
   const { projectId } = useParams();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [myProject, setMyProject] = useState([]);
-
-    useEffect(() => {
-        (async() => {
-            setIsLoaded(false);
-            const response = await fetch(`/projects/${projectId}`);
-            const project = await response.json();
-            setMyProject(project.project)
-            setIsLoaded(true);
-        })();
-    }, [])
     return (
         <div className='project-wrapper'>
             <Grid className="display">
                 {(projectId == 1) ?
                   (
+                    <>
                     <Cell small={12} large={6} className="model-container">
                       <Canvas pixelRatio={[1, 1]} camera={{ position: [0, 0, 50], fov: 35, zoom: 1.0, near: 1, far: 1000 }}>
                           <directionalLight position={[10, 10, 5]} intensity={1.5} />
@@ -110,22 +99,32 @@ const Project = () => {
                           <OrbitControls enableZoom={false}/>
                       </Canvas>
                     </Cell>
+                    <Cell small={12} large={6} className='project-info'>
+                      <h1>LNQ.</h1>
+                      <h3>THE WEARABLE INTERNET.</h3>
+                      <div className='project-links'>
+                          <a href='https://thewearableinternet.com/' className='links'>explore</a>
+                          <a href='https://discord.gg/lnq' className='links'>discord</a>
+                      </div>
+                    </Cell>
+                </>
                   )
                 :
                   (
-                  <Cell small={12} large={6} className="model-container">
-                      <img src={lightfieldImage}></img>
+                    <>
+                      <Cell small={12} large={7}  className='project-info' id="lightfield-info">
+                      <h1>LightField</h1>
+                      <h3>see, touch, and experience the metaverse in new exciting ways.</h3>
+                      <div className='project-links'>
+                          <a href='https://www.projectlightfield.io/' className='links'>explore</a>
+                      </div>
                     </Cell>
+                      <Cell small={12} large={5} className="img-container">
+                        <img src={lightfieldImage}></img>
+                      </Cell>
+                    </>
                   )
                 }      
-                <Cell small={12} large={6} className='project-info'>
-                    <h1>{myProject.name}</h1>
-                    <h3>THE WEARABLE INTERNET.</h3>
-                    <div className='project-links'>
-                        <a href='https://thewearableinternet.com/' className='links'>link</a>
-                        <a href='https://thewearableinternet.com/' className='links'>discord</a>
-                    </div>
-                </Cell>
             </Grid>
         </div>
     )

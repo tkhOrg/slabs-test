@@ -1,10 +1,10 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import {Grid, Cell } from 'react-foundation';
 import { Canvas, useLoader } from '@react-three/fiber';
 import { OrbitControls } from "@react-three/drei";
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import slabs3D from '../models/slabs.fbx';
-
+import EmailModal from'../components/EmailModal';
 
 import './Home.css';
 function Model (){
@@ -13,8 +13,15 @@ function Model (){
 }
 
 const Home = () => {
+    const [showModal, setShowModal] = useState(true);
+
+  const openModal = () => {
+    setShowModal(prev => !prev)
+  }
     return (
         <div className='home-wrapper'>
+            {showModal ? <EmailModal setShowModal={setShowModal}/>
+            : null}
             <Grid className="display">
                 <Cell small={12} large={12} className="model-container">
                     <Canvas pixelRatio={[1, 1]} camera={{ position: [0, 0, 400], fov: 35, zoom: 1.3, near: 1, far: 1000 }}>

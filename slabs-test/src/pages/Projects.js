@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import {Grid, Cell } from 'react-foundation';
 
@@ -6,18 +6,6 @@ import './Projects.css'
 
 
 const Projects = () => {
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [projects, setProjects] = useState([]);
-
-    useEffect(() => {
-        (async() => {
-            setIsLoaded(false);
-            const response = await fetch(`/projects`);
-            const projectsList = await response.json();
-            setProjects(projectsList.projects)
-            setIsLoaded(true);
-        })();
-    }, [])
 
     return (
         <>
@@ -26,9 +14,8 @@ const Projects = () => {
                 <Cell small={12} large={12}className="model-container">
                 <h1>PROJECTS</h1>
                 <div className='project-links'>
-                    {projects.map(p => (
-                        <Link to={`/projects/${p.id}`}>{p.name}</Link>
-                    ))}
+                    <Link to={'/projects/1'} className='links projects-link'>LNQ</Link>
+                    <Link to={'/projects/2'} className='links projects-link'>LightField</Link>
                 </div>
                 </Cell>
             </Grid>

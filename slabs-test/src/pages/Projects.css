@@ -3,6 +3,22 @@
 
 }
 
+#projects-main{
+    text-align: center;
+}
+
+#projects-main h1{
+    font-family: 'sLABS-bold';
+    font-size: 80px;
+}
+
+
+.projects-link{
+    margin-top:6rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 .model-container{
     height: 40vh;
 }
@@ -18,6 +34,13 @@
 
 .project-links a{
     padding: 0 1rem 0 0;
+}
+
+#lightfield-info{
+    padding: 0 4rem;
+}
+.display .img-container{
+    padding: 0 4rem;
 }
 
 @keyframes slide-up{
