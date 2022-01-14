@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense } from 'react';
 import {Grid, Cell } from 'react-foundation';
 import { Canvas, useLoader } from '@react-three/fiber';
 import { OrbitControls } from "@react-three/drei";

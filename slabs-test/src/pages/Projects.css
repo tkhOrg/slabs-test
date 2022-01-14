@@ -1,0 +1,26 @@
+.project-wrapper{
+    padding: 20vh 0;
+
+}
+
+.model-container{
+    height: 40vh;
+}
+
+.project-info{
+    padding: 4rem 1rem ;
+    animation: slide-up 2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.project-info h1{
+    font-family: 'sLABS-bold';
+}
+
+.project-links a{
+    padding: 0 1rem 0 0;
+}
+
+@keyframes slide-up{
+    0%   {opacity: 0;transform: translateY(100px)};
+    100% {opacity: 1;transform: translateY(0)};
+}

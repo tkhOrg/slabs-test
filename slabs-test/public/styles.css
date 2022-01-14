@@ -117,9 +117,25 @@ nav{
     transition: all 0.2s ease-in;
 }
 
+
+@media (max-width: 544px) {
+ .left-links{
+    display: none;
+ }   
+ .right-links{
+     text-align: center;
+ }
+ nav{
+  display:block;
+ }
+}
+
 /* footer styles */
-.footer-wrapper{
-    text-align: center;
+footer{
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 footer img{
