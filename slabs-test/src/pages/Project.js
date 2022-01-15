@@ -89,6 +89,14 @@ const Project = () => {
                 {(projectId == 1) ?
                   (
                     <>
+                    <Cell small={12} large={12} className='project-info' id="lnq-info">
+                      <h1>LNQ.</h1>
+                      <h3>THE WEARABLE INTERNET.</h3>
+                      <div className='project-links'>
+                          <a href='https://thewearableinternet.com/' className='links'>explore</a>
+                          <a href='https://discord.gg/lnq' className='links'>discord</a>
+                      </div>
+                    </Cell>
                     <Cell small={12} large={6} className="model-container">
                       <Canvas pixelRatio={[1, 1]} camera={{ position: [0, 0, 50], fov: 35, zoom: 1.0, near: 1, far: 1000 }}>
                           <directionalLight position={[10, 10, 5]} intensity={1.5} />
@@ -99,12 +107,10 @@ const Project = () => {
                           <OrbitControls enableZoom={false}/>
                       </Canvas>
                     </Cell>
-                    <Cell small={12} large={6} className='project-info'>
-                      <h1>LNQ.</h1>
-                      <h3>THE WEARABLE INTERNET.</h3>
+                    <Cell small={12} large={6} className='project-info' id="aura-info">
+                      <h3>Introducing AURAS.</h3>
                       <div className='project-links'>
-                          <a href='https://thewearableinternet.com/' className='links'>explore</a>
-                          <a href='https://discord.gg/lnq' className='links'>discord</a>
+                          <p>Add blurb here about auras and signing up.</p>
                       </div>
                     </Cell>
                 </>

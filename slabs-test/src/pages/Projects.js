@@ -1,7 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Grid, Cell } from 'react-foundation';
-
+import Card from '../components/Card';
+import LnqLogo from "../images/LNQ_logo.png";
+import LightField from "../images/A.45.jpg";
 import './Projects.css'
 
 
@@ -14,8 +16,30 @@ const Projects = () => {
                 <Cell small={12} large={12}className="model-container">
                 <h1>PROJECTS</h1>
                 <div className='project-links'>
-                    <Link to={'/projects/1'} className='links projects-link'>LNQ</Link>
-                    <Link to={'/projects/2'} className='links projects-link'>LightField</Link>
+                    <Grid className='link-grid'>
+                        <Link to='/projects/1'>
+                            <span className="card" style={{"display": "block"}}>
+                                <Card
+                                    key="the wearable internet."
+                                    hexa='#0155fd'
+                                    title='LNQ.'
+                                    description="the wearable internet."
+                                    image={LnqLogo}
+                                />
+                            </span>
+                        </Link>
+                        <Link to='/projects/2'>
+                            <span className="card" style={{"display": "block"}}>
+                                <Card
+                                    key="see, touch, and experience."
+                                    hexa="#000000"
+                                    title="LightField"
+                                    description="see, touch, and experience."
+                                    image={LightField}
+                                />
+                            </span>
+                        </Link>
+                    </Grid>
                 </div>
                 </Cell>
             </Grid>
