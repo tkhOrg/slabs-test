@@ -30,7 +30,7 @@ const Home = () => {
                         <Suspense fallback={null}>
                             <Model position-y={-0.5} scale={[0.2, 0.2, 0.2]} />
                         </Suspense>
-                        <OrbitControls autoRotate enableZoom={false}/>
+                        <OrbitControls enableZoom={false}/>
                     </Canvas>
                 </Cell>
                 <Cell small={12} large={12} className='home-info'>
