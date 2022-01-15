@@ -52,7 +52,6 @@ const EmailModal = ({setShowModal}) => {
         <h1 className='emailFormTitle'>stay updated.</h1>
         <form className='emailForm' onSubmit={handleSubmit}>
           <input className='emailInput' ref={emailRef} placeholder='Your Email' autoComplete="off"></input>
-          <br></br>
           <input className='emailSubmit' type="Submit" value="Sign Up"></input>
         </form>
           <p className='backBtn' onClick={backClick}>close</p>
